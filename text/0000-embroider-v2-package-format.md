@@ -415,7 +415,7 @@ importSync('some-dependency').default;
 
 `importSync` exists to do a thing that standard Javascript does not do: synchronous dynamic import. Ember historically needs synchronous dynamic import (it's what our runtime AMD `require` does). Until some future date at which Ember has migrated away from synchronous module resolution we need `importSync`.
 
-`importSync` is defined as behaving exactly like the standards-complient `import` except instead of returning `Promise<Module>` it returns `Module`.
+`importSync` is defined as behaving exactly like the standards-compliant `import` except instead of returning `Promise<Module>` it returns `Module`.
 
 In this RFC we don't state explicitly what `importSync` compiles to. It compiles to whatever the Javascript bundler we're using supports in order to achieve synchronous dynamic import. For example, if we're internally using Webpack we can compile `importSync("something")` to `require("something")`, because Webpack supports CommonJS `require` anywhere.
 
