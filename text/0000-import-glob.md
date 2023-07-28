@@ -136,7 +136,7 @@ This greatly reduces future compatibility concerns, and it doesn't cost us anyth
 `import.meta.glob` has this signature:
 
 ```ts
-(pattern: string): Record<string, Promise<unknown>>
+(pattern: string): Record<string, () => Promise<unknown>>
 ```
 
 When you know that the things you're importing have a shared interface, it will behoove you to cast to it:
